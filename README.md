@@ -1,7 +1,7 @@
 
-# Authentimate
+# UniGuardian
 
-**Authentimate** is an application that analyzes and visualizes student profiles. It provides functionalities to manage student databases, analyze textual information, and generate dashboards based on analysis results.
+**UniGuardian** is an application that analyzes and visualizes student profiles. It provides functionalities to manage student databases, analyze textual information, and generate dashboards based on analysis results.
 
 ## Features
 

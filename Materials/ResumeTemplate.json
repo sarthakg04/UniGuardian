@@ -1,0 +1,62 @@
+{
+    "Name": "",
+    "Sex": "",
+    "SAT": "",
+    "TOFLE": "",
+    "GRE": "",
+    "Contact": {
+      "Email": "",
+      "Phone": "",
+      "Location": "",
+      "LinkedIn": "",
+      "Other Website": []
+    },
+    "Education": [
+      {
+        "Institution": "",
+        "Degree": "",
+        "Location": "",
+        "GPA": "",
+        "Dates": "",
+        "Courses": []
+      }
+    ],
+    "Work Experience": [
+      {
+        "Company": "",
+        "Title": "",
+        "Location": "",
+        "Dates": "",
+        "Responsibilities": []
+      }
+    ],
+    "Projects": [
+      {
+        "Title": "",
+        "Position": "", 
+        "Dates": "",
+        "Location": "",
+        "Details": []
+      }
+    ],
+    "Research Experience": [
+      {
+        "Title": "",
+        "Position": "",
+        "Dates": "",
+        "Location": "",
+        "Details": []
+      }
+    ],
+    "Skills": [],
+    "Awards & Honors": [
+      {
+          "Title": "",
+          "Date": "",
+          "Organization": "",
+          "Details": ""
+      }
+    ],
+    "Publications": [],
+    "Certificates": []
+}

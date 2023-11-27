@@ -1,5 +1,6 @@
 import unittest
 import json
+import os
 from PsyProfile_HumanticAI import *
 from ResumeParser_OpenAI import *
 
@@ -60,7 +61,7 @@ class TestResumeParser(unittest.TestCase):
     def test_call_openal_api(self):
         json_template_string = "{'Name': ''}"
         resume_text = "Name: hack"
-        openai_api_key = "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"
+        openai_api_key = "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"
         generated_text = call_openal_api(json_template_string, resume_text, openai_api_key)
         self.assertIsNotNone(generated_text, 'Fail to fetch result from openai api.')
 
@@ -69,12 +70,12 @@ class TestResumeParser(unittest.TestCase):
         template_path = "./Materials/ResumeTemplate.json"
         user_id = "hack"
         output_dir = "./Materials/"
-        api_key = "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"
+        api_key = "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"
         output_file = parse_resume(resume_path, template_path, user_id, output_dir, api_key)
         self.assertTrue(os.access(output_file, os.W_OK), 'Fail to parse the resume')
 
 def run_unit_tests():
-    test_classes_to_run = [TestPsyProfile, TestResumeParser]
+    test_classes_to_run = [TestResumeParser, TestPsyProfile]
     loader = unittest.TestLoader()
     suites_list = []
     for test_class in test_classes_to_run:

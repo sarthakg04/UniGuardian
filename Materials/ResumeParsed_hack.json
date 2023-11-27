@@ -1,125 +1,153 @@
 {
-    "Name": "HACKATHLON",
+    "Name": "Jiaqi Li",
     "Sex": "",
     "SAT": "",
     "TOFLE": "",
     "GRE": "",
     "Contact": {
-        "Email": "hackath@buffalo.edu",
-        "Phone": "716-123-4567",
-        "Location": "",
-        "LinkedIn": "linkedin.com/in/hackathonub",
-        "Other Website": [
-            "github.com/hackerub"
-        ]
+        "Email": "jjiaqili4@andrew.cmu.edu",
+        "Phone": "j650-281-8875",
+        "Location": "Mountain View, CA",
+        "LinkedIn": "linkedin.com/in/lijiaqi1579",
+        "Other Website": []
     },
     "Education": [
         {
-            "Institution": "University at Buffalo",
-            "Degree": "Master of Science",
-            "Location": "",
+            "Institution": "Carnegie Mellon University Silicon Valley",
+            "Degree": "M.S. in Software Management",
+            "Location": "Mountain View, CA",
             "GPA": "",
-            "Dates": "June20XX",
-            "Courses": []
+            "Dates": "Aug. 2023 - Expected Dec. 2024",
+            "Courses": [
+                "Foundation of Software Management",
+                "Integrated Thinking of Innovation",
+                "Entrepreneurship & Innovation"
+            ]
         },
         {
-            "Institution": "University of Pune",
-            "Degree": "Bachelor of Engineering",
-            "Location": "India",
-            "GPA": "",
-            "Dates": "August20XX",
-            "Courses": []
+            "Institution": "Wuhan University",
+            "Degree": "M.Eng. in Computer Science",
+            "Location": "Wuhan, China",
+            "GPA": "90.03/100",
+            "Dates": "Sep. 2020 - June 2023",
+            "Courses": [
+                "Advanced Database Technology",
+                "Parallel Algorithm",
+                "Advanced Computer Graphics",
+                "Cloud Computing"
+            ]
+        },
+        {
+            "Institution": "Wuhan University",
+            "Degree": "B.Eng. in Computer Science",
+            "Location": "Wuhan, China",
+            "GPA": "87.96/100",
+            "Dates": "Sep. 2016 - June 2020",
+            "Courses": [
+                "Computer Architecture",
+                "Operator System",
+                "Database",
+                "Data Structure",
+                "Object-Oriented Programming"
+            ]
         }
     ],
     "Work Experience": [
         {
-            "Company": "UBIT Department",
-            "Title": "Student Assistant",
-            "Location": "Buffalo, NY",
-            "Dates": "November20XX–May20XX",
+            "Company": "Alibaba Cloud",
+            "Title": "Software Engineer Intern",
+            "Location": "Hangzhou, China",
+            "Dates": "June 2022 - Sep. 2022",
             "Responsibilities": [
-                "Supported 1,000+ library patrons per week with printing and applications for issues mainly involving MS Office",
-                "Maintained inventories and printing site supplies within specified limits"
-            ]
-        },
-        {
-            "Company": "43North Organization",
-            "Title": "Software Engineering Intern",
-            "Location": "Buffalo, NY",
-            "Dates": "June20XX–August20XX",
-            "Responsibilities": [
-                "Developed first mobile application prototype to minimize time required by HVAC contractors to conduct inspection",
-                "Re-factored 40% of cross-platform mobile application employing MVC framework (Vue.js) and NoSQL database (Pouch/Couch)"
-            ]
-        },
-        {
-            "Company": "Infosys India Pvt. Ltd.",
-            "Title": "Software Test Analyst",
-            "Location": "India",
-            "Dates": "August20XX–June20XX",
-            "Responsibilities": [
-                "Worked for US-based insurance company on 15 applications and 45 projects",
-                "Supervised execution of 10 projects, giving daily progress reports to higher management and clients",
-                "Prepared test plans, executed end-to-end functional testing, and delivered defect-free projects",
-                "Analyzed data from OLTP and OLAP data warehouses using MSSQL and Microstrategy Reporting Tool",
-                "Mentored new team members via knowledge transfer sessions"
+                "Deployed the integrated OpenStack Neutron with VMWare NSX to achieve cross-platform management and control plane.",
+                "Adopted the Token Bucket Algorithm to improve distributed QoS performance on the gateway of VPC.",
+                "Refactored the virtual gateway management program with the idea of object programming, reducing the total code amount by 50% and greatly decreasing the workload of iterative development."
             ]
         }
     ],
     "Projects": [
         {
-            "Title": "Alignment-Free Sequence Analysis using Deep Learning",
-            "Position": "",
-            "Dates": "",
+            "Title": "High-Performance Framework for Machine Learning Computation",
+            "Position": "(C++/Python/Cpython)",
+            "Dates": "Sep. 2020 - Oct. 2022",
             "Location": "",
             "Details": [
-                "Employed a CNN-based model for sequencing analysis using an alignment-free approach to reduce computation time complexity, performing various experiments to tune parameters and optimize model"
+                "Used the LLVM Pass methods to optimize the computation graphs based on Relay IR, e.g., operator fusion.",
+                "Designed efficient operator implements with TIR in the CUDA level and backward operators to support model training.",
+                "Adopted a fine-grained graph partition method and pipeline method to achieve model paralleling on heterogeneous devices.",
+                "Developed an efficient framework for deep learning computation based on TVM compiler, which could achieve a speedup ranging from 1.5x to 5x comparing with TensorFlow and PyTorch when conducting model inference."
             ]
         },
         {
-            "Title": "Big Data Analytics using Hadoop and Spark",
-            "Position": "",
-            "Dates": "",
+            "Title": "Automatic Graph-Level Compiler for Model Inference",
+            "Position": "(C++/Python/Cpython/Rust)",
+            "Dates": "Sep. 2021 - Dec. 2021",
             "Location": "",
             "Details": [
-                "Derived N-gram word co-occurrences along with lemmatization from a large-scale Latin text data utilizing MapReduce and Spark"
+                "Employed Python with Static Single Assignment principle to implement Domain Specific Language for graph-level compiler, achieving the functions of graph generation, graph analysis, operator generation, graph optimization, etc.",
+                "Designed the algorithms to automatically optimize computation graphs with C++ language, such as optimal graph rewriting.",
+                "Adopted a max-flow min-cut algorithm and dynamic programming to reduce the complexity of graph rewriting from hours to seconds."
             ]
         },
         {
-            "Title": "Multilingual Search System for Twitter",
-            "Position": "",
-            "Dates": "",
+            "Title": "Embedded Multimedia Player",
+            "Position": "(C/C++)",
+            "Dates": "Sep. 2019 - Nov. 2019",
             "Location": "",
             "Details": [
-                "Engineered search system incorporating data from Twitter REST API and indexes it in SOLR to provide relevant results for queries",
-                "Built a custom Dismax Parser plugin which translates query in other languages and boosts appropriately"
+                "Designed the program on Keil platform with C languages to build a multimedia system based on STM32.",
+                "Transplanted UCOSII operating system to RT-Thread Nano to achieve multitasking feature.",
+                "Built picture display module, touch screen induction module, audio/video play module, and audio record module."
             ]
         },
         {
-            "Title": "Android Group Messenger with Simple Amazon Dynamo",
-            "Position": "",
-            "Dates": "",
+            "Title": "WeChat Mini App - School Bus Assistant",
+            "Position": "(Java/JavaScript/SQL)",
+            "Dates": "Sep. 2018 - Dec. 2018",
             "Location": "",
             "Details": [
-                "Built a Group Messenger to handle concurrent message ordering, routing in P2P network with Distributed Hash Table and fault tolerance via Dynamo-style key-value storage"
-            ]
-        },
-        {
-            "Title": "Analysis of World Bank Data",
-            "Position": "",
-            "Dates": "",
-            "Location": "",
-            "Details": [
-                "Cleaned, munged, and applied machine learning algorithms to classify and visualize results in a Tableau dashboard"
+                "Developed student-side and driver-side applets to provide functions of location display, online payment, appointment, etc.",
+                "Applied Java Servlet and MySQL with Spring Boot on AWS to design the database and the back-end program; Designed UI/UX with WXML and WXSS in the view layer and JavaScript in the logic layer."
             ]
         }
     ],
-    "Research Experience": [],
+    "Research Experience": [
+        {
+            "Title": "GLite: A Fast and Efficient Automatic Graph-Level Optimizer for Large-Scale DNNs",
+            "Position": "",
+            "Dates": "Sep. 2021 - Feb. 2022",
+            "Location": "San Francisco, CA",
+            "Details": [
+                "Designed a Domain-specific Language to support users to create computation graph objects, load graphs, profile graphs, optimize graph, etc; Developed Python API to call the Cython-packaged C++ implements.",
+                "Applied matched substitutes on input graphs with backtracking methods to achieve automatic optimal graph generation.",
+                "Proposed a max-flow min-cut graph partition method to reduce complexity and a dynamic programming method to avoid repeated subgraph matching; The compiling time is decreased from hours to seconds."
+            ]
+        },
+        {
+            "Title": "2017 & 2018 TREC Video Retrieval Evaluation",
+            "Position": "",
+            "Dates": "Jan. 2017 - Aug. 2018",
+            "Location": "Wuhan, China",
+            "Details": [
+                "Optimized a pre-trained Places365-VGG model on PyTorch framework for scene recognition based on global features.",
+                "Fine-tuned the pre-trained ILSVRC13-VGG model, combined with Bag-of-word method to detect and classify local objects in the video on the Caffe-SSD framework; Visualized the object detection results by Matlab.",
+                "Implemented a person re-identification methods integrating the local SSD feature with the global feature from classification networks.",
+                "Developed an interactive Windows program for dataset manual tagging by C#."
+            ]
+        }
+    ],
     "Skills": [
-        "Languages: Java, Python, R, VisualBasic",
-        "Data Management & Analytics: MSSQL, SQLite, NoSQL (Pouch/Couch)",
-        "Web Development: HTML, CSS, JavaScript",
-        "Tools: Eclipse, Jupyter, VisualStudio, AndroidStudio"
+        "C/Cpp",
+        "Python",
+        "Java",
+        "SQL",
+        "Shell",
+        "CSharp",
+        "JavaScript",
+        "Rust",
+        "HTML/CSS",
+        "CUDA",
+        "Perl"
     ],
     "Awards & Honors": [],
     "Publications": [],

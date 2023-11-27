@@ -1,0 +1,109 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <style>
+        /* Add any custom styles for your dashboard here */
+        .dashboard-container {
+            max-width: 1200px;
+            margin: auto;
+        }
+        .header {
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section-header {
+            background: #007bff;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .section-content {
+            padding: 15px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+        }
+        .award-item {
+            padding: 10px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .award-item:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Resume Header -->
+        <div class="header">
+            <h1>{{ resume_data.Name }}</h1>
+            <p>{{ resume_data.Contact.Email }}</p>
+            <p>{{ resume_data.Contact.Phone }}</p>
+        </div>
+
+        <!-- Education Section -->
+        <div class="section">
+            <div class="section-header">Education</div>
+            <div class="section-content">
+                {% for education in resume_data.Education %}
+                    <h3>{{ education.Degree }} - {{ education.Institution }}</h3>
+                    <p>{{ education.Location }}, {{ education.Dates }}</p>
+                    <p>GPA: {{ education.GPA }}</p>
+                {% empty %}
+                    <p>No education data available.</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Work Experience Section -->
+        <div class="section">
+            <div class="section-header">Work Experience</div>
+            <div class="section-content">
+                {% for work in resume_data.Work_Experience %}
+                    <h3>{{ work.Title }} - {{ work.Company }}</h3>
+                    <p>{{ work.Location }}, {{ work.Dates }}</p>
+                    <ul>
+                        {% for responsibility in work.Responsibilities %}
+                            <li>{{ responsibility }}</li>
+                        {% endfor %}
+                    </ul>
+                {% empty %}
+                    <p>No work experience data available.</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Awards & Honors Section -->
+        <div class="section">
+            <div class="section-header">Awards & Honors</div>
+            <div class="section-content">
+                {% for award in resume_data.Awards_Honors %}
+                    <div class="award-item">
+                        <h3>{{ award.Title }}</h3>
+                        <p>{{ award.Organization }}, {{ award.Date }}</p>
+                        <p>{{ award.Details }}</p>
+                    </div>
+                {% empty %}
+                    <p>No awards or honors data available.</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Include any other sections such as Projects, Research Experience, Skills, Publications, etc. -->
+    </div>
+
+    <!-- Include Bootstrap JS and any other scripts you need -->
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

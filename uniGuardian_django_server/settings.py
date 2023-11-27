@@ -31,13 +31,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'uniGuardian',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'uniGuardian.apps.UniguardianConfig',
+    # 'uniGuardian.apps.UniguardianConfig',
 ]
 
 MIDDLEWARE = [

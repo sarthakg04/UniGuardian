@@ -90,6 +90,6 @@ resume_path = "./Materials/Resume.pdf"
 template_path = "./Materials/ResumeTemplate.json"
 user_id = "hack"
 output_dir = "./Materials/"
-api_key = "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"
+api_key = "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"
 #resumeParse(resume_path, template_path, user_id, output_dir)
 parse_resume(resume_path, template_path, user_id, output_dir, api_key)

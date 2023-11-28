@@ -5,6 +5,10 @@ from django.core.files.storage import FileSystemStorage
 from django.views.decorators.csrf import csrf_exempt
 
 
+def index(request):
+    return render(request, 'index.html')
+
+
 def dashboard_view(request):
     # Dummy data to simulate what you might get from your API
     dummy_data = {

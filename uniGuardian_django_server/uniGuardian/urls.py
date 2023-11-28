@@ -8,4 +8,5 @@ urlpatterns = [
     path('file_upload_resume/', file_upload_resume, name='file_upload_resume'),
     path('file_upload_rl/', file_upload_rl, name='file_upload_rl'),
     path('home/', home, name='home'),
+    path('', index, name='index'),
 ]

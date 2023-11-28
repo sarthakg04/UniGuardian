@@ -1,4 +1,4 @@
-# UniGuardian
+# UniGuardian 🛡️
 
 ## Introduction
 UniGuardian is an innovative application tailored to modernize the university admissions process. It addresses key challenges such as managing high application volumes, ensuring academic integrity, and providing unbiased student profile analysis. UniGuardian stands out as a transformative solution, bringing efficiency and fairness into the realm of university admissions.

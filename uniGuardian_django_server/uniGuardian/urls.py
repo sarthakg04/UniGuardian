@@ -17,10 +17,12 @@
 
 
 from django.urls import path
+from .views import *
 
-from uniGuardian import views
 
 urlpatterns = [
   path('api/dashboard/', views.create_user_profile),
   path('api/dashboard/<str:email>/', views.fetch_user_profile),
+  path('dashboard/', dashboard_view, name='dashboard'),
+  path('', index, name='index'),
 ]

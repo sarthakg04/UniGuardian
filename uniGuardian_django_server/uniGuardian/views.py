@@ -64,7 +64,13 @@ def dashboard_view(request):
         ],
         "psychometric_evaluation": {
             "image_url": "psychometric_graph.png"  # URL or path to the psychometric evaluation image
-        }
+        },
+        "skills": [
+            "Python, C++, JavaScript, SQL, Bash, Golang",
+            "Django, Flask, NodeJS, ReactJS, Scikit, Boto3, TensorFlow",
+            "Kubernetes, Docker, GIT, PostgreSQL, MySQL, SQLite",
+            "Linux, Web, AWS, Google Cloud Platform, Snowflake, Airflow"
+                ],
     }
     return render(request, 'dashboard.html', context)
 

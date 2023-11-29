@@ -1,6 +1,7 @@
 from textblob import TextBlob
 from config import GPA_SCALE, MAX_SCORES
 
+
 class Analysis:
 
     @staticmethod
@@ -25,7 +26,7 @@ class Analysis:
     @staticmethod
     def essay_analysis(essay):
         analysis = TextBlob(essay)
-        return ((analysis.sentiment.polarity + (1 - analysis.sentiment.subjectivity)) / 2)*100
+        return ((analysis.sentiment.polarity + (1 - analysis.sentiment.subjectivity)) / 2) * 100
 
     @staticmethod
     def recommendation_analysis(recommendations):

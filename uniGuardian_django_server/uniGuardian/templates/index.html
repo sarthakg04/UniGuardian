@@ -194,7 +194,8 @@
 </div>
 <div class="formbold-main-wrapper">
   <div class="formbold-form-wrapper">
-    <form action="/submit form" method="POST">
+    <form action="http://127.0.0.1:8000/dashboard/" method="POST">
+        {% csrf_token %}
       <div class="formbold-mb-5">
         <label for="email" class="formbold-form-label formbold-form-label-2">
           Full Name
@@ -286,7 +287,7 @@
       <div>
          </div>
 
-        <button class="formbold-btn w-full">Send File</button>
+        <button type="submit" class="formbold-btn w-full">Send File</button>
       </div>
     </form>
   </div>

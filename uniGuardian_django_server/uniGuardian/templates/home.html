@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <title>uniGuardian</title>
+    <style>
+        /* Your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column; /* Align items in a column */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .header {
+            font-size: 24px; /* Larger font size for the header */
+            margin-bottom: 20px; /* Space between the header and buttons */
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+    </style>
+    <!-- Add your CSS link here if you have any -->
+</head>
+<body>
+    <div class="header">uniGuardian</div>
+
+    <!-- Buttons -->
+    <button id="uploadButton">Upload File</button>
+    <button id="analyzeButton">Analyze</button>
+
+    <!-- JavaScript -->
+    <script>
+        document.getElementById('uploadButton').addEventListener('click', function() {
+            window.location.href = "{% url 'file_upload_resume' %}"; // Change this URL to your desired path
+        });
+        document.getElementById('analyzeButton').addEventListener('click', function() {
+            window.location.href = "{% url 'dashboard' %}"; // Change this URL to your desired path
+        });
+    </script>
+
+</body>
+</html>

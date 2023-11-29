@@ -79,8 +79,12 @@
             </div>
             <!-- Professional Work Experience -->
             <div class="border rounded-3 p-xl-8 m-xl-4 col-5 col-xl-5 h-auto w-50">
+                <h2 class="text-md-start pb-xl-4">
+						Professional Work Experience
+                    <br><br>
+					</h2>
                 {% for experience in professional_experience %}
-                    <h2 class="text-md-start pb-xl-4">{{ experience.title }}</h2>
+                    <h5 class="text-md-start pb-xl-4">{{ experience.title }}</h5>
                     <ul>
                         {% for item in experience.details %}
                             <li>{{ item }}</li>

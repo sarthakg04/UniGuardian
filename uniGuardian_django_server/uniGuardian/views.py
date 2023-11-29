@@ -8,7 +8,7 @@ from django.views.decorators.csrf import csrf_exempt
 def index(request):
     return render(request, 'index.html')
 
-
+@csrf_exempt
 def dashboard_view(request):
     # Dummy data to simulate what you might get from your API
     context = {
@@ -45,23 +45,19 @@ def dashboard_view(request):
                 ]
             },
             {
-                "title": "Rivian : Software Engineer",
+                "title": "Georgia Tech : Research Intern",
                 "details": [
-                    "Algorithm Mastery: Crafted optimal trading strategies",
-                    "Financial Insight: Delved deep into market analysis",
-                    "Risk Management: Employed quantitative safety techniques",
-                    "Performance Tracking: Monitored using rigorous metrics",
-                    "Compliance Adherence: Upheld strict regulatory standards"
+                    "Internship Experience: Interned under Dr. Eva Dyer, NerDS Lab",
+                    "Technical Design: Designed neural network for Brain Imagery",
+                    "Data Analysis: Formulated perceptual ranking dataset; assessed performance"
                 ]
             },
             {
-                "title": "Google : Software Engineer",
+                "title": "Rivian : Software Engineer Intern",
                 "details": [
-                    "Algorithm Mastery: Crafted optimal trading strategies",
-                    "Financial Insight: Delved deep into market analysis",
-                    "Risk Management: Employed quantitative safety techniques",
-                    "Performance Tracking: Monitored using rigorous metrics",
-                    "Compliance Adherence: Upheld strict regulatory standards"
+                    "System Design: Designed High-Throughput Fleet Management Systems",
+                    "Vision Solutions Deployment: Deployed 133 Factory Vision Solutions resulting in a 13% reduction in cycle-time",
+                    "Code Optimization: Optimized Legacy Code, boosting software performance by 20%"
                 ]
             }
             # Add other experiences as needed

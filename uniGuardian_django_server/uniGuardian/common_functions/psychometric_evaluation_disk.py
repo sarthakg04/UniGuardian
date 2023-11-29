@@ -1,9 +1,10 @@
+#DISK Assesment
 import matplotlib.pyplot as plt
 import json
 from math import pi
 
 # Sample JSON data - replace this with your actual data
-data = '{"Learning": 8, "Decision Making": 6, "Emotion": 7, "Focus": 5, "Risk Tolerance": 9, "Generosity": 4}'
+data = '{"Dominance": 9, "Influence": 8, "Steadiness": 7, "Calculativeness": 10 }'
 
 # Parsing JSON data
 values = json.loads(data)
@@ -21,7 +22,9 @@ stats += stats[:1]
 angles += angles[:1]
 
 # Plot
+
 ax = plt.subplot(111, polar=True)
+plt.title("DISC Assessment", size=20, color='blue')
 
 # Draw one axe per variable and add labels
 plt.xticks(angles[:-1], labels)

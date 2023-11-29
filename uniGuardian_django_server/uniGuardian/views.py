@@ -11,45 +11,66 @@ def index(request):
 
 def dashboard_view(request):
     # Dummy data to simulate what you might get from your API
-    dummy_data = {
-        "Name": "John Doe",
-        "Contact": {
-            "Email": "john@example.com",
-            "Phone": "555-1234",
-            "Location": "Anywhere, USA",
-            "LinkedIn": "johnlinkedin",
-            "Other Website": ["johnsblog.com"]
+    context = {
+        "personal_details": {
+            "name": "Kshitiz Dhyaani",
+            "course": "Master’s in Computer Science Engineering",
+            "semester": "Fall’25",
+            "course_type": "Full Time Course",
+            "avatar_url": "uniGuardian/avatar.png"  # URL or path to the avatar image
         },
-        "Education": [
-            {
-                "Institution": "University of Example",
-                "Degree": "B.S. in Computer Science",
-                "Location": "Example City",
-                "GPA": "3.8",
-                "Dates": "2017 - 2021",
-                "Courses": ["Course 1", "Course 2"]
-            }
+        "key_highlights": {
+            "summary": "Kshitiz Dhyani, a Gold Medalist from IIT Kanpur, demonstrated expertise as a Quantitative Trader at AlphaGrep, formulating optimal trading strategies and ensuring regulatory compliance. He further showcased technical prowess at Georgia Tech and Rivian, developing neural networks for Brain Imagery and optimizing fleet management systems. His accomplishments are backed by high-impact academic recommendations.",
+            "percentage_written_by_ai": 3
+        },
+        "academic_history": [
+            "Bachelor’s in Computer Engineering, Indian Institute of Technology, Kanpur",
+            "Senior Secondary School STEM, City Montessori School, Lucknow",
+            "High School, City Montessori School, Lucknow"
         ],
-        "Work_Experience": [
-            {
-                "Company": "ExampleTech",
-                "Title": "Software Engineer",
-                "Location": "Techville",
-                "Dates": "2021 - Present",
-                "Responsibilities": ["Developed features", "Fixed bugs"]
-            }
+        "highlights": [
+            "Gold Medalist Cultural Secretary of Techkriti, 3.8/4, Dean’s List",
+            "91%, CBSE Good Academic History",
+            "89%, CBSE Fair Academic History"
         ],
-        "Awards_Honors": [
+        "professional_experience": [
             {
-                "Title": "Employee of the Year",
-                "Date": "2022",
-                "Organization": "ExampleTech",
-                "Details": "For outstanding performance and dedication."
+                "title": "AlphaGrep : Software Engineer",
+                "details": [
+                    "Algorithm Mastery: Crafted optimal trading strategies",
+                    "Financial Insight: Delved deep into market analysis",
+                    "Risk Management: Employed quantitative safety techniques",
+                    "Performance Tracking: Monitored using rigorous metrics",
+                    "Compliance Adherence: Upheld strict regulatory standards"
+                ]
+            },
+            {
+                "title": "Rivian : Software Engineer",
+                "details": [
+                    "Algorithm Mastery: Crafted optimal trading strategies",
+                    "Financial Insight: Delved deep into market analysis",
+                    "Risk Management: Employed quantitative safety techniques",
+                    "Performance Tracking: Monitored using rigorous metrics",
+                    "Compliance Adherence: Upheld strict regulatory standards"
+                ]
+            },
+            {
+                "title": "Google : Software Engineer",
+                "details": [
+                    "Algorithm Mastery: Crafted optimal trading strategies",
+                    "Financial Insight: Delved deep into market analysis",
+                    "Risk Management: Employed quantitative safety techniques",
+                    "Performance Tracking: Monitored using rigorous metrics",
+                    "Compliance Adherence: Upheld strict regulatory standards"
+                ]
             }
-        ]
+            # Add other experiences as needed
+        ],
+        "psychometric_evaluation": {
+            "image_url": "psychometric_graph.png"  # URL or path to the psychometric evaluation image
+        }
     }
-
-    return render(request, 'dashboard.html', {'resume_data': dummy_data})
+    return render(request, 'dashboard.html', context)
 
 
 @csrf_exempt

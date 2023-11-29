@@ -8,8 +8,8 @@ from django.http.response import JsonResponse
 from rest_framework.parsers import JSONParser
 from rest_framework import status
 
-from uniGuardian.models import UserProfile
-from uniGuardian.serializers import UserProfileSerializer
+from .models import UserProfile
+from .serializers import UserProfileSerializer
 from rest_framework.decorators import api_view
 
 

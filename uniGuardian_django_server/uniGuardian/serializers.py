@@ -8,4 +8,6 @@ class UserProfileSerializer(serializers.ModelSerializer):
         model = UserProfile
         fields = ('email',
                   'psychometrics',
+                  'ai_detection_score',
+                  'hightlight',
                   'analysis')

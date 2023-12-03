@@ -1,0 +1,22 @@
+{
+    "Name": "",
+    "Sex": "",
+    "SAT": "",
+    "TOFLE": "",
+    "GRE": "",
+    "Email": "",
+    "Phone": "",
+    "Location": "",
+    "LinkedIn": "",
+    "Other Website": [""],
+    "Education": [
+        {
+            "Institution": "",
+            "Degree": "",
+            "Location": "",
+            "GPA": "",
+            "Dates": "",
+            "Courses": [""]
+        }
+    ]
+}

@@ -194,17 +194,17 @@
 </div>
 <div class="formbold-main-wrapper">
   <div class="formbold-form-wrapper">
-    <form >
+    <form action="" method="POST" enctype="multipart/form-data"> {% csrf_token %}
         {% csrf_token %}
       <div class="formbold-mb-5">
         <label for="email" class="formbold-form-label formbold-form-label-2">
-          Enter Email
+          Full Name
         </label>
         <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="Enter your Email"
+          type="text"
+          name="fullname"
+          id="fullname"
+          placeholder="Enter your Full Name"
           class="formbold-form-input"
         />
       </div>
@@ -291,7 +291,6 @@
       </div>
     </form>
   </div>
-</div>
 <script>
   function displayFileName(input, previewId) {
     if (input.files && input.files[0]) {

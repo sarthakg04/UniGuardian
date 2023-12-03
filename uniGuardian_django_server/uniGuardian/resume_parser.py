@@ -35,7 +35,7 @@ def load_resume(resume_path):
     return resume_text
 
 def call_palm_api_once(resume_text, template, model):
-    prompt = "Organize the content of the resume:\n" + resume_text + "\naccording to json format without any other extra text: " + template+ "\n" + "Only the content in the json is needed!!!"
+    prompt = "Extract the content of the resume:\n" + resume_text + "\nand fill them into current json template: " + template+ "\n" + "Only the content in the current json template provided is needed!!! Please don't extract the content needed by prior json template!"
     completion_palm = palm.generate_text(
         model=model,
         prompt=prompt,
@@ -187,13 +187,13 @@ def parse_resume(resume_path, template_path, user_id, output_dir, api_key):
     #output_file = output_json_file(output_dir, user_id, json_object)
     return generated_text
 
-    resume_path = "./Materials/Resume.pdf"
-    template_path = "./Materials/ResumeTemplate.json"
-    user_id = "hack"
-    output_dir = "./Materials/"
-    api_key = "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"
-    #resumeParse(resume_path, template_path, user_id, output_dir)
-    start = time.time()
-    parse_resume(resume_path, template_path, user_id, output_dir, api_key)
-    end = time.time()
-    print(end - start)
+# resume_path = "./Materials/Resume.pdf"
+# template_path = "./Materials/ResumeTemplate.json"
+# user_id = "hack"
+# output_dir = "./Materials/"
+# api_key = "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"
+# #resumeParse(resume_path, template_path, user_id, output_dir)
+# start = time.time()
+# parse_resume(resume_path, template_path, user_id, output_dir, api_key)
+# end = time.time()
+# print(end - start)

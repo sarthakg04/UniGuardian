@@ -10,7 +10,17 @@ from rest_framework import status
 
 from .models import UserProfile
 from .serializers import UserProfileSerializer
+from .resume_parser import load_resume, call_palm_api
+from .hightlight_profiler import get_hightlight
+from .ai_content_detection import detect_ai_content
+from .api_key_decoder import decode_openai_api_key
+from .psychometric_profiler import create_user_profile, modify_user_persona
 from rest_framework.decorators import api_view
+import textract
+import datetime 
+import json
+import time
+
 
 
 @api_view(['POST', 'DELETE'])
@@ -26,8 +36,6 @@ def create_user_profile(request):
 
 
 # GET list of tutorials, POST a new tutorial, DELETE all tutorials
-
-
 @api_view(['GET'])
 def fetch_user_profile(request, email):
     # find tutorial by pk (email)
@@ -39,8 +47,89 @@ def fetch_user_profile(request, email):
         return JsonResponse({'message': 'The profile does not exist'}, status=status.HTTP_404_NOT_FOUND)
 
 
+@csrf_exempt
 def index(request):
+    if request.method == 'POST':
+        process_files(request)
+        print("success!")
+        return dashboard_view(request)
     return render(request, 'index.html')
+
+
+def process_files(request):
+    resume_text = ""
+    sop_text = ""
+    lor1_text = ""
+    lor2_text = ""
+    palm_api_key = "AIzaSyB1Y9HF5GBUAKXBa-d3-1G_IxKKU93cFI8"
+    sapling_api_key = "PX41HQGZ4FAV34HWVO3BQAOGULQH91AQ"
+    openai_api_key_encoded = "pZCKXO32yeX6BMudQd531ODH8FFWrujGxZ7BE8tdgscoBfb2Ho0ADeDBawNAtYmonLAT*5sJTiXS7GzF4eNpeYBbo1Q==*FvAZ5kXUodizYNAaZV1oZg==*htbiVdqZrHdCPGIEgmwW0A=="
+    humanticai_api_key = "chrexec_96effa3d5b5f3c0de52193e04e91e087"
+    psychometrics_json_text = ""
+    analysis_text = ""
+    openai_api_key = decode_openai_api_key(openai_api_key_encoded)
+    print(openai_api_key)
+
+    student_name = request.GET.get('fullname', '')
+    cur_time = datetime.datetime.now()
+
+    if 'resume' in request.FILES:
+        file_resume = request.FILES['resume']
+        with open('../Materials/UploadFiles/resume.pdf', 'wb+') as dest:
+            for chunk in file_resume.chunks():
+                dest.write(chunk)
+        resume_text = load_resume('../Materials/UploadFiles/resume.pdf')
+        print(type(resume_text))
+        analysis_text = call_palm_api(resume_text, palm_api_key)
+        resume_text = str(textract.process('../Materials/UploadFiles/resume.pdf', method='pdfminer'))
+        print(analysis_text)
+
+    if 'sop' in request.FILES:
+        file_sop = request.FILES['sop']
+        with open('../Materials/UploadFiles/sop.pdf', 'wb+') as dest:
+            for chunk in file_resume.chunks():
+                dest.write(chunk)
+        PERSONA = "hiring"
+        sop_text = str(textract.process('../Materials/UploadFiles/sop.pdf', method='pdfminer'))
+        # create_user_profile(humanticai_api_key, student_name, '../Materials/UploadFiles/sop.pdf')
+        # statu_code, psychometrics_json_text = modify_user_persona(humanticai_api_key, student_name, PERSONA)
+        # print(psychometrics_json_text)
+
+    if 'lor1' in request.FILES:           
+        file_lor1 = request.FILES['lor1']
+        with open('../Materials/UploadFiles/lor1.pdf', 'wb+') as dest:
+            for chunk in file_lor1.chunks():
+                dest.write(chunk)
+        lor1_text = str(textract.process('../Materials/UploadFiles/lor1.pdf', method='pdfminer'))
+        
+    if 'lor2' in request.FILES:           
+        file_lor1 = request.FILES['lor2']
+        with open('../Materials/UploadFiles/lor2.pdf', 'wb+') as dest:
+            for chunk in file_lor1.chunks():
+                dest.write(chunk)
+        lor2_text = str(textract.process('../Materials/UploadFiles/lor2.pdf', method='pdfminer'))
+        print(type(lor2_text))
+
+
+    resume_json_object = json.loads(analysis_text)
+    email_address = resume_json_object["Email"]
+
+    hightlight_text = get_hightlight(resume_text, sop_text, lor1_text, lor2_text, openai_api_key)
+    ai_content_score = detect_ai_content(sapling_api_key, sop_text)
+
+    user = UserProfile(email = email_address, createdAt = cur_time, raw_resume = resume_text, raw_sop = sop_text, raw_lor1 = lor1_text, raw_lor2 = lor2_text, psychometrics = psychometrics_json_text, analysis = analysis_text, hightlight = hightlight_text, ai_detection_score = ai_content_score)
+    user.save()
+
+    fetch_user_profile_test(email_address)
+
+
+def fetch_user_profile_test(email):
+    # find tutorial by pk (email)
+    user_profile_data = UserProfile.objects.get(pk=email)
+    user_profile_serializer = UserProfileSerializer(user_profile_data)
+    print(user_profile_serializer.data)
+
+
 
 @csrf_exempt
 def dashboard_view(request):
@@ -170,4 +259,3 @@ def file_upload_rl(request):
     template = loader.get_template('file_upload_rl.html')
     store_process_file(request)
     return HttpResponse(template.render())
-

@@ -194,16 +194,17 @@
 </div>
 <div class="formbold-main-wrapper">
   <div class="formbold-form-wrapper">
+
     <form action="" method="POST" enctype="multipart/form-data"> {% csrf_token %}
       <div class="formbold-mb-5">
         <label for="email" class="formbold-form-label formbold-form-label-2">
-          Full Name
+          Enter Email
         </label>
         <input
-          type="text"
-          name="fullname"
-          id="fullname"
-          placeholder="Enter your Full Name"
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Enter your Email"
           class="formbold-form-input"
         />
       </div>
@@ -359,3 +360,4 @@
 // document.querySelector('form').addEventListener('submit', handleSubmit);
 
 </script>
+

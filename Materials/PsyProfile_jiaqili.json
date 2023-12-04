@@ -7,7 +7,7 @@
         "display_name": "",
         "user_profile_image": {},
         "user_name": {},
-        "user_id": "f7ca747a77724ce34c33",
+        "user_id": "e7c273615a4a7c15609d",
         "user_description": {},
         "demographics": {},
         "languages": {},
@@ -105,31 +105,31 @@
                 "conversation_starters": [],
                 "communication_advice": {
                     "adjectives": [
-                        "Sometimes Sarcastic",
-                        "Hard To Convince",
-                        "Fast Learner"
+                        "Fast Learner",
+                        "Perfectionist",
+                        "Very Practical"
                     ],
                     "description": [
                         "They are perfectionists with little tolerance for mistakes and are total go-getters.",
-                        "They are motivated by planning, winning, and being part of fast-moving teams and organizations.",
-                        "They combine a strong bias for action with an analytical bent of mind."
+                        "They combine a strong bias for action with an analytical bent of mind.",
+                        "They are not easy to manage as team members and are equally hard taskmasters as leaders."
                     ],
                     "what_to_say": [
-                        "Tell them about the authority and control that the position will allow them to exert, if relevant.",
                         "Share factual information about the role and also highlight what impact it could create.",
-                        "Tell them how the role would challenge them, and what monetary or growth benefits they can expect."
+                        "Use phrases like 'high ROI', 'data-driven culture' etc. if those phrases aptly describe your organization.",
+                        "Be to-the-point and very objective when you share details with them, they are not sold by stories like the S or I personality types."
                     ],
                     "what_to_avoid": [
                         "Do not make the role look easy or too repeatable. Unlike the S personality types, this repels them away.",
-                        "Don't focus on talking about \"friendly workplace\", \"work life balance\" etc., it is quite far from what they truly care about.",
-                        "Skip verbosity and small talk, they are highly likely to be put off by it."
+                        "Skip verbosity and small talk, they are highly likely to be put off by it.",
+                        "Don't try to use superlatives or flowery language, they will respond the best if they feel that they are getting the real information."
                     ],
                     "_type": [
                         "high calculativeness",
                         "high dominance"
                     ],
-                    "personalized_email": "Hi <candidate_name>, \n\nMy name is <your_name>, I've been tasked with finding a skilled, methodical <role_name> for <company_name>, based out of <role_location>. According to my analysis, I think this role should be aligned with your expectations, are you open to a discussion about it? \n\nThere are three main expectations from this role: \n**b**<expectation_first> \n**b**<expectation_second> \n**b**<expectation_third> \n\n<role_extra_info> \n\nThe most important benefits of this role would be threefold: the chance to work with a pretty sharp team, the ability to make a clear impact, and strong growth prospects. \n\nMay I call you to provide the information that will help you make your decision? \n\nThanks for your time. \n\n<your_name> ",
-                    "personalized_email_subject": "<role_name> role that would move your career graph up"
+                    "personalized_email": "Hi <candidate_name>, \n\nMy name is <your_name>, I've been given the mandate to find a consistent, methodical <role_name> for <company_name>, based out of <role_location>. Based on what I have gathered, I believe this is a role that would fit your profile, could you make some time to discuss about it? \n\nThe key expectations from this role are: \n**b**<expectation_first> \n**b**<expectation_second> \n**b**<expectation_third> \n\n<role_extra_info> \n\nThe key benefits of this role for you would be threefold: the opportunity to work with a well-organized team, strong career advancement prospects and a chance to make measurable contribution to the company. \n\nCould I give you a call to provide the necessary information that you will need to make your decision? \n\nThanks for your time. \n\n<your_name> ",
+                    "personalized_email_subject": "<role_name> role that would enhance your career"
                 }
             },
             "sales": {
@@ -179,9 +179,9 @@
                 "conversation_starters": [],
                 "communication_advice": {
                     "adjectives": [
-                        "ROI Driven",
                         "Precise But Practical",
-                        "Fast But Analytical"
+                        "Thorough Evaluator",
+                        "Occasionally Confrontational"
                     ],
                     "key_traits": {
                         "Risk Appetite": "They have high risk tolerance and can even take risky decisions easily if their analysis supports it.",
@@ -191,18 +191,18 @@
                     },
                     "description": [
                         "They are not relationship-oriented and make decisions based solely on product value prop.",
-                        "Once they overcome their initial reluctance, they can be fairly fast adopters.",
-                        "They prefer to make decisions themselves, after they have done thorough analysis."
+                        "They prefer to make decisions themselves, after they have done thorough analysis.",
+                        "They respond better to clear and objective but respectful interactions."
                     ],
                     "what_to_say": [
+                        "Be prepared for comments or questions that are critical of your product or your claims",
                         "Use phrases like ‘you will ensure’, ‘the impact of this’, ‘X% more’ etc.",
-                        "Communicate confidently, strongly, positively but avoid a confrontational approach",
-                        "Stay firm while negotiating, they can make unreasonable demands sometimes"
+                        "Showcase your competitive superiority"
                     ],
                     "what_to_avoid": [
-                        "Don’t be slow in responding to their emails, requests, questions",
-                        "Don’t nudge them to do something by using the logic that others have done the same",
-                        "Avoid inviting them for any social interactions until you have their respect"
+                        "Avoid inviting them for any social interactions until you have their respect",
+                        "Don’t give in too easily if they demand low pricing, reiterate the value of your product",
+                        "Avoid self-deprecating references or general ramblings"
                     ],
                     "_type": [
                         "high calculativeness",
@@ -298,16 +298,18 @@
     },
     "usage_stats": {
         "user_profile": {
-            "remaining": 49,
+            "remaining": 44,
             "limit": 50,
-            "consumed": 1,
+            "consumed": 6,
             "info": "remaining = limit - consumed",
             "remaining_extension": 50,
             "limit_extension": 50,
             "consumed_extension": 0,
             "info_extension": "remaining_extension = limit_extension - consumed_extension",
             "subscription_status": "active",
-            "subscription_renewal_date": "2023-12-11T00:23:29.000Z"
+            "trail_end_date": "2023-11-28T23:30:32.000Z",
+            "max_overage": 0,
+            "overage": 0
         }
     }
 }

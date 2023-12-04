@@ -9,7 +9,5 @@ class UserProfile(models.Model):
    raw_lor2 = models.TextField(default='')
    psychometrics = models.TextField(default='')
    analysis = models.TextField(default='')
-   hightlight = models.TextField(default='')
-   ai_detection_score = models.TextField(default='')
 
 

@@ -17,11 +17,10 @@ from .api_key_decoder import decode_openai_api_key
 from .psychometric_profiler import *
 from rest_framework.decorators import api_view
 import textract
-import datetime 
+import datetime
 import json
 import time
 import pprint
-
 
 
 @api_view(['POST', 'DELETE'])
@@ -93,14 +92,14 @@ def process_files(request):
         PERSONA = "hiring"
         sop_text = str(textract.process('../Materials/UploadFiles/sop.pdf', method='pdfminer'))
 
-    if 'lor1' in request.FILES:           
+    if 'lor1' in request.FILES:
         file_lor1 = request.FILES['lor1']
         with open('../Materials/UploadFiles/lor1.pdf', 'wb+') as dest:
             for chunk in file_lor1.chunks():
                 dest.write(chunk)
         lor1_text = str(textract.process('../Materials/UploadFiles/lor1.pdf', method='pdfminer'))
-        
-    if 'lor2' in request.FILES:           
+
+    if 'lor2' in request.FILES:
         file_lor1 = request.FILES['lor2']
         with open('../Materials/UploadFiles/lor2.pdf', 'wb+') as dest:
             for chunk in file_lor1.chunks():
@@ -110,7 +109,7 @@ def process_files(request):
 
     resume_json_object = json.loads(analysis_text)
     email_address = resume_json_object["Email"]
-    
+
     create_user_profile_psychometric(humanticai_api_key, email_address, '../Materials/UploadFiles/sop.pdf')
     statu_code, psychometrics_json_text = modify_user_persona(humanticai_api_key, email_address, PERSONA)
     print(psychometrics_json_text)
@@ -118,13 +117,17 @@ def process_files(request):
     hightlight_text = get_hightlight(resume_text, sop_text, lor1_text, lor2_text, openai_api_key)
     ai_content_score = detect_ai_content(sapling_api_key, sop_text)
 
-    user = UserProfile(email = email_address, createdAt = cur_time, raw_resume = resume_text, raw_sop = sop_text, raw_lor1 = lor1_text, raw_lor2 = lor2_text, psychometrics = psychometrics_json_text, analysis = analysis_text, hightlight = hightlight_text, ai_detection_score = ai_content_score)
+    user = UserProfile(email=email_address, createdAt=cur_time, raw_resume=resume_text, raw_sop=sop_text,
+                       raw_lor1=lor1_text, raw_lor2=lor2_text, psychometrics=psychometrics_json_text,
+                       analysis=analysis_text, hightlight=hightlight_text, ai_detection_score=ai_content_score)
     user.save()
 
     user_json = fetch_user_profile_test(email_address)
     context = get_info_from_user_json(user_json)
     return context
 
+def group_skills(skills_list, group_size=6):
+    return [', '.join(skills_list[i:i + group_size]) for i in range(0, len(skills_list), group_size)]
 
 def get_info_from_user_json(user_json):
     context = {
@@ -150,7 +153,7 @@ def get_info_from_user_json(user_json):
             "89%, CBSE Fair Academic History"
         ],
         "professional_experience": [
-            
+
         ],
         "psychometric_evaluation": {
             "image_url": "psychometric_graph.png"  # URL or path to the psychometric evaluation image
@@ -160,28 +163,31 @@ def get_info_from_user_json(user_json):
             "Django, Flask, NodeJS, ReactJS, Scikit, Boto3, TensorFlow",
             "Kubernetes, Docker, GIT, PostgreSQL, MySQL, SQLite",
             "Linux, Web, AWS, Google Cloud Platform, Snowflake, Airflow"
-                ],
+        ],
     }
     resume_info = json.loads(user_json["analysis"])
     psychometrics_info = json.loads(user_json["psychometrics"])
-    
+
     context["personal_details"]["name"] = resume_info["Name"]
     context["key_highlights"]["summary"] = user_json["hightlight"]
     context["key_highlights"]["percentage_written_by_ai"] = user_json["ai_detection_score"]
-    #context["academic_history"]
+    academic_history = []
+    for entry in resume_info["Education"]:
+        history_entry = f"{entry['Degree']}, {entry['Institution']}, {entry['Location']}"
+        academic_history.append(history_entry)
+
+    context["academic_history"] = academic_history
     for dict in resume_info["Work Experience"]:
         new_dict = {}
         new_dict["title"] = dict["Company"] + " - " + dict["Title"]
         new_dict["details"] = dict["Responsibilities"]
-        context["professional_experience"].append(dict)
+        context["professional_experience"].append(new_dict)
     for item in resume_info["Awards & Honors"]:
         context["highlights"].append(item["Title"])
-    context["psychometric_evaluation"] = psychometrics_info["results"]["personality_analysis"]    
-    context["skills"] = resume_info["Skills"]
+    context["psychometric_evaluation"] = json.dumps(psychometrics_info["results"]["personality_analysis"])
+    context["skills"] = group_skills(resume_info["Skills"])
     print(context)
     return context
-
-
 
 
 def fetch_user_profile_test(email):
@@ -189,7 +195,6 @@ def fetch_user_profile_test(email):
     user_profile_data = UserProfile.objects.get(pk=email)
     user_profile_serializer = UserProfileSerializer(user_profile_data)
     return dict(user_profile_serializer.data)
-
 
 
 @csrf_exempt
@@ -278,7 +283,7 @@ def store_process_file(request):
     if request.method != 'POST':
         return HttpResponseBadRequest('Only POST requests are allowed')
     # now get the uploaded file
-    #file = request.FILES['applicant_file']
+    # file = request.FILES['applicant_file']
     for file in request.FILES.getlist('applicant_rl'):
         print(file.name)
         # the file is going to be an instance of UploadedFile

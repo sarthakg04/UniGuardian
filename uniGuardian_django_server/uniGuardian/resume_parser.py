@@ -35,7 +35,7 @@ def load_resume(resume_path):
     return resume_text
 
 def call_palm_api_once(resume_text, template, model):
-    prompt = "Extract the content of the resume:\n" + resume_text + "\nand fill them into current json template: " + template+ "\n" + "Only the content in the current json template provided is needed!!! Please don't extract the content needed by prior json template!"
+    prompt = "Extract the content of the resume:\n" + resume_text + "\nand fill them into current json template: " + template+ "\n" + "Only the content in the current json template provided is needed!!! Please don't extract the content needed by prior json template! Also make sure that the Highlights section is of length 75 words maximum"
     completion_palm = palm.generate_text(
         model=model,
         prompt=prompt,

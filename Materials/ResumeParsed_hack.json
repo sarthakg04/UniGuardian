@@ -6,7 +6,7 @@
     "GRE": "",
     "Contact": {
         "Email": "jjiaqili4@andrew.cmu.edu",
-        "Phone": "650-281-8875",
+        "Phone": "j650-281-8875",
         "Location": "Mountain View, CA",
         "LinkedIn": "linkedin.com/in/lijiaqi1579",
         "Other Website": []
@@ -16,13 +16,12 @@
             "Institution": "Carnegie Mellon University Silicon Valley",
             "Degree": "M.S. in Software Management",
             "Location": "Mountain View, CA",
-            "GPA": "90.03/100",
+            "GPA": "",
             "Dates": "Aug. 2023 - Expected Dec. 2024",
             "Courses": [
                 "Foundation of Software Management",
                 "Integrated Thinking of Innovation",
-                "Entrepreneurship & Innovation",
-                ""
+                "Entrepreneurship & Innovation"
             ]
         },
         {
@@ -35,8 +34,7 @@
                 "Advanced Database Technology",
                 "Parallel Algorithm",
                 "Advanced Computer Graphics",
-                "Cloud Computing",
-                ""
+                "Cloud Computing"
             ]
         },
         {
@@ -50,8 +48,7 @@
                 "Operator System",
                 "Database",
                 "Data Structure",
-                "Object-Oriented Programming",
-                ""
+                "Object-Oriented Programming"
             ]
         }
     ],
@@ -71,32 +68,32 @@
     "Projects": [
         {
             "Title": "High-Performance Framework for Machine Learning Computation",
-            "Position": "Software Engineer Intern",
-            "Dates": "Sep. 2020 – Oct. 2022",
-            "Location": "Wuhan, China",
+            "Position": "(C++/Python/Cpython)",
+            "Dates": "Sep. 2020 - Oct. 2022",
+            "Location": "",
             "Details": [
                 "Used the LLVM Pass methods to optimize the computation graphs based on Relay IR, e.g., operator fusion.",
-                "Designed eﬃcient operator implements with TIR in the CUDA level and backward operators to support model training.",
-                "Adopted a ﬁne-grained graph partition method and pipeline method to achieve model paralleling on heterogeneous devices.",
-                "Developed an eﬃcient framework for deep learning computation based on TVM compiler, which could achieve a speedup ranging from 1.5x to 5x comparing with TensorFlow and PyTorch when conducting model inference."
+                "Designed efficient operator implements with TIR in the CUDA level and backward operators to support model training.",
+                "Adopted a fine-grained graph partition method and pipeline method to achieve model paralleling on heterogeneous devices.",
+                "Developed an efficient framework for deep learning computation based on TVM compiler, which could achieve a speedup ranging from 1.5x to 5x comparing with TensorFlow and PyTorch when conducting model inference."
             ]
         },
         {
             "Title": "Automatic Graph-Level Compiler for Model Inference",
-            "Position": "Software Engineer Intern",
-            "Dates": "Sep. 2021 – Dec. 2021",
-            "Location": "Wuhan, China",
+            "Position": "(C++/Python/Cpython/Rust)",
+            "Dates": "Sep. 2021 - Dec. 2021",
+            "Location": "",
             "Details": [
-                "Employed Python with Static Single Assignment principle to implement Domain Speciﬁc Language for graph-level compiler, achieving the functions of graph generation, graph analysis, operator generation, graph optimization, etc.",
+                "Employed Python with Static Single Assignment principle to implement Domain Specific Language for graph-level compiler, achieving the functions of graph generation, graph analysis, operator generation, graph optimization, etc.",
                 "Designed the algorithms to automatically optimize computation graphs with C++ language, such as optimal graph rewriting.",
-                "Adopted a max-ﬂow min-cut algorithm and dynamic programming to reduce the complexity of graph rewriting from hours to seconds."
+                "Adopted a max-flow min-cut algorithm and dynamic programming to reduce the complexity of graph rewriting from hours to seconds."
             ]
         },
         {
             "Title": "Embedded Multimedia Player",
-            "Position": "Software Engineer Intern",
-            "Dates": "Sep. 2019 – Nov. 2019",
-            "Location": "Wuhan, China",
+            "Position": "(C/C++)",
+            "Dates": "Sep. 2019 - Nov. 2019",
+            "Location": "",
             "Details": [
                 "Designed the program on Keil platform with C languages to build a multimedia system based on STM32.",
                 "Transplanted UCOSII operating system to RT-Thread Nano to achieve multitasking feature.",
@@ -105,9 +102,9 @@
         },
         {
             "Title": "WeChat Mini App - School Bus Assistant",
-            "Position": "Software Engineer Intern",
-            "Dates": "Sep. 2018 – Dec. 2018",
-            "Location": "Wuhan, China",
+            "Position": "(Java/JavaScript/SQL)",
+            "Dates": "Sep. 2018 - Dec. 2018",
+            "Location": "",
             "Details": [
                 "Developed student-side and driver-side applets to provide functions of location display, online payment, appointment, etc.",
                 "Applied Java Servlet and MySQL with Spring Boot on AWS to design the database and the back-end program; Designed UI/UX with WXML and WXSS in the view layer and JavaScript in the logic layer."
@@ -116,25 +113,43 @@
     ],
     "Research Experience": [
         {
-            "Title": "GLite: A Fast and Eﬃcient Automatic Graph-Level Optimizer for Large-Scale DNNs",
-            "Position": "First Author & Oral Presenter",
-            "Dates": "Sep. 2021 – Feb. 2022",
+            "Title": "GLite: A Fast and Efficient Automatic Graph-Level Optimizer for Large-Scale DNNs",
+            "Position": "",
+            "Dates": "Sep. 2021 - Feb. 2022",
             "Location": "San Francisco, CA",
-            "Details": []
+            "Details": [
+                "Designed a Domain-specific Language to support users to create computation graph objects, load graphs, profile graphs, optimize graph, etc; Developed Python API to call the Cython-packaged C++ implements.",
+                "Applied matched substitutes on input graphs with backtracking methods to achieve automatic optimal graph generation.",
+                "Proposed a max-flow min-cut graph partition method to reduce complexity and a dynamic programming method to avoid repeated subgraph matching; The compiling time is decreased from hours to seconds."
+            ]
+        },
+        {
+            "Title": "2017 & 2018 TREC Video Retrieval Evaluation",
+            "Position": "",
+            "Dates": "Jan. 2017 - Aug. 2018",
+            "Location": "Wuhan, China",
+            "Details": [
+                "Optimized a pre-trained Places365-VGG model on PyTorch framework for scene recognition based on global features.",
+                "Fine-tuned the pre-trained ILSVRC13-VGG model, combined with Bag-of-word method to detect and classify local objects in the video on the Caffe-SSD framework; Visualized the object detection results by Matlab.",
+                "Implemented a person re-identification methods integrating the local SSD feature with the global feature from classification networks.",
+                "Developed an interactive Windows program for dataset manual tagging by C#."
+            ]
         }
     ],
     "Skills": [
-        "Programming Languages: C/Cpp, Python, Java, SQL, Shell, CSharp, JavaScript, Rust, HTML/CSS, CUDA, Perl, etc.",
-        "Tools & Frameworks: Git, Linux, Matlab, PyTorch, TensorFlow, OpenStack, Docker, Spark, Visual Studio, JetBrains, MySQL, etc."
+        "C/Cpp",
+        "Python",
+        "Java",
+        "SQL",
+        "Shell",
+        "CSharp",
+        "JavaScript",
+        "Rust",
+        "HTML/CSS",
+        "CUDA",
+        "Perl"
     ],
-    "Awards & Honors": [
-        {
-            "Title": "2017 & 2018 TREC Video Retrieval Evaluation",
-            "Date": "Jan. 2017 – Aug. 2018",
-            "Organization": "the National Institute of Standards and Technology (NIST)",
-            "Details": []
-        }
-    ],
+    "Awards & Honors": [],
     "Publications": [],
     "Certificates": []
 }

@@ -1,0 +1,166 @@
+<!-- In templates/analysis_results.results.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Results</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Add your CSS styling here */
+        .container {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+        }
+        .graph {
+            width: 45%;
+            display: inline-block;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Results</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Basic styling; update as needed */
+        .container {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+        }
+        .graph {
+            width: 45%;
+            display: inline-block;
+            margin: 20px;
+        }
+        .tooltip {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .tooltip:hover::after {
+            content: attr(data-description);
+            position: absolute;
+            background: #fff;
+            padding: 5px;
+            border: 1px solid #000;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Psychometric Analysis Results</h1>
+
+        <!-- OCEAN Assessment Graph -->
+        <div class="graph">
+            <h2>OCEAN Assessment</h2>
+            <canvas id="oceanGraph"></canvas>
+        </div>
+
+        <!-- DISC Assessment Graph -->
+        <div class="graph">
+            <h2>DISC Assessment</h2>
+            <canvas id="discGraph"></canvas>
+        </div>
+
+        <!-- Behavioral Factors -->
+        <div>
+            <h2>Behavioral Factors</h2>
+                Attitude and Outlook: {{ results.results.persona.hiring.behavioural_factors.attitude_and_outlook.level }}</br>
+                General Behavior: {{ results.results.persona.hiring.behavioural_factors.general_behavior.level }}</br>
+                Teamwork Skills: {{ results.results.persona.hiring.behavioural_factors.teamwork_skills.level }}</br>
+                Learning Ability: {{ results.results.persona.hiring.behavioural_factors.learning_ability.level }}</br>
+                Stability Potential: {{ results.results.persona.hiring.behavioural_factors.stability_potential.level }}</br>
+                Need for Autonomy: {{ results.results.persona.hiring.behavioural_factors.need_for_autonomy.level }}</br>
+                Action Orientedness: {{ results.results.persona.hiring.behavioural_factors.action_orientedness.level }}</br>
+        </div>
+        {{ results.results.persona.communication_advice.adjectives }}
+
+        <!-- Communication Style and Advice -->
+        <div>
+            <h2>Communication Style and Advice</h2>
+                {% for adject in results.results.persona.hiring.communication_advice.adjectives %}
+            <p>{{ adject }}</p>
+                {% endfor %}
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to render the OCEAN graph
+        var oceanCtx = document.getElementById('oceanGraph').getContext('2d');
+        var oceanGraph = new Chart(oceanCtx, {
+            type: 'radar',
+            data: {
+                labels: ['Openness', 'Conscientiousness', 'Extraversion', 'Agreeableness', 'Emotional Stability'],
+                datasets: [{
+                    label: 'OCEAN Score',
+                    data: [
+                        {{ results.results.personality_analysis.ocean_assessment.openness.score }},
+                        {{ results.results.personality_analysis.ocean_assessment.conscientiousness.score }},
+                        {{ results.results.personality_analysis.ocean_assessment.extraversion.score }},
+                        {{ results.results.personality_analysis.ocean_assessment.agreeableness.score }},
+                        {{ results.results.personality_analysis.ocean_assessment.emotional_stability.score }}
+                    ],
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    r: {
+                        suggestedMin: 0,
+                        suggestedMax: 10
+                    }
+                }
+            }
+        });
+
+        // JavaScript to render the DISC graph
+        var discCtx = document.getElementById('discGraph').getContext('2d');
+        var discGraph = new Chart(discCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Dominance', 'Influence', 'Steadiness', 'Calculativeness'],
+                datasets: [{
+                    label: 'DISC Score',
+                    data: [
+                        {{ results.results.personality_analysis.disc_assessment.dominance.score }},
+                        {{ results.results.personality_analysis.disc_assessment.influence.score }},
+                        {{ results.results.personality_analysis.disc_assessment.steadiness.score }},
+                        {{ results.results.personality_analysis.disc_assessment.calculativeness.score }}
+                    ],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

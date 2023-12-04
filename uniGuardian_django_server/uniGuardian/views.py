@@ -55,6 +55,7 @@ def index(request):
         return dashboard_view(request, context)
     return render(request, 'index.html')
 
+
 # @csrf_exempt
 def process_files(request):
     resume_text = ""
@@ -126,8 +127,10 @@ def process_files(request):
     context = get_info_from_user_json(user_json)
     return context
 
+
 def group_skills(skills_list, group_size=6):
     return [', '.join(skills_list[i:i + group_size]) for i in range(0, len(skills_list), group_size)]
+
 
 def get_info_from_user_json(user_json):
     context = {
@@ -325,3 +328,71 @@ def file_upload_rl(request):
     template = loader.get_template('file_upload_rl.html')
     store_process_file(request)
     return HttpResponse(template.render())
+
+
+# In your views.py
+from django.shortcuts import render
+import requests
+import json
+import time
+
+
+def upload_transcript(request):
+    if request.method == 'POST':
+        transcript_text = request.POST.get('transcript_text')
+        email = request.POST.get('email')
+        if transcript_text and email:
+            # Call the API to submit the text for analysis
+            post_response = submit_text_for_analysis(transcript_text, email)
+
+            # Check if the submission was successful
+            if post_response.status_code == 200:
+                time.sleep(30)
+                # Call the API to get the analysis results
+                get_response = get_analysis_results(email)
+                analysis_results = get_response.json()
+
+                # Render a new template with analysis results
+                return render(request, 'analysis_results.html', {'results': analysis_results})
+            else:
+                # Handle errors here
+                pass
+
+    return render(request, 'upload_transcript.html')
+
+
+def check_analysis(request, email):
+    # Call the API to get the analysis results
+    get_response = get_analysis_results(email)
+    print("I am here")
+    if get_response.status_code == 200:
+        analysis_results = get_response.json()
+        print(analysis_results)
+        return render(request, 'analysis_results.html', {'results': analysis_results})
+    else:
+        # Handle errors or display a message if the analysis is not available
+        return render(request, 'error_page.html', {'error_message': 'Analysis not available or failed.'})
+
+
+def submit_text_for_analysis(text, email):
+    api_key = 'chrexec_38c4fb1b29f06012dd5081c130032afa'
+    url = 'https://api.humantic.ai/v1/user-profile/create'
+    params = {
+        'apikey': api_key,
+        'id': email
+    }
+    headers = {'Content-Type': 'application/json'}
+    data = json.dumps({'text': text})
+    return requests.post(url, headers=headers, params=params, data=data)
+
+
+def get_analysis_results(email):
+    api_key = 'chrexec_38c4fb1b29f06012dd5081c130032afa'
+    url = 'https://api.humantic.ai/v1/user-profile'
+    params = {
+        'apikey': api_key,
+        'id': email,
+        'persona': 'hiring'  # Or other relevant persona
+    }
+    headers = {'Content-Type': 'application/json'}
+    return requests.get(url, headers=headers, params=params)

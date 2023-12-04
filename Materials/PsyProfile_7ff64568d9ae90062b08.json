@@ -7,7 +7,7 @@
         "display_name": "",
         "user_profile_image": {},
         "user_name": {},
-        "user_id": "f7ca747a77724ce34c33",
+        "user_id": "e51021794f81955109a0",
         "user_description": {},
         "demographics": {},
         "languages": {},
@@ -105,31 +105,31 @@
                 "conversation_starters": [],
                 "communication_advice": {
                     "adjectives": [
-                        "Sometimes Sarcastic",
+                        "Persistent & Direct",
                         "Hard To Convince",
-                        "Fast Learner"
+                        "Sometimes Sarcastic"
                     ],
                     "description": [
-                        "They are perfectionists with little tolerance for mistakes and are total go-getters.",
                         "They are motivated by planning, winning, and being part of fast-moving teams and organizations.",
-                        "They combine a strong bias for action with an analytical bent of mind."
+                        "They combine a strong bias for action with an analytical bent of mind.",
+                        "They are not easy to manage as team members and are equally hard taskmasters as leaders."
                     ],
                     "what_to_say": [
-                        "Tell them about the authority and control that the position will allow them to exert, if relevant.",
-                        "Share factual information about the role and also highlight what impact it could create.",
-                        "Tell them how the role would challenge them, and what monetary or growth benefits they can expect."
+                        "Tell them how the role would challenge them, and what monetary or growth benefits they can expect.",
+                        "Use phrases like 'high ROI', 'data-driven culture' etc. if those phrases aptly describe your organization.",
+                        "Tell them about the authority and control that the position will allow them to exert, if relevant."
                     ],
                     "what_to_avoid": [
-                        "Do not make the role look easy or too repeatable. Unlike the S personality types, this repels them away.",
                         "Don't focus on talking about \"friendly workplace\", \"work life balance\" etc., it is quite far from what they truly care about.",
-                        "Skip verbosity and small talk, they are highly likely to be put off by it."
+                        "Skip verbosity and small talk, they are highly likely to be put off by it.",
+                        "Don't try to use superlatives or flowery language, they will respond the best if they feel that they are getting the real information."
                     ],
                     "_type": [
                         "high calculativeness",
                         "high dominance"
                     ],
-                    "personalized_email": "Hi <candidate_name>, \n\nMy name is <your_name>, I've been tasked with finding a skilled, methodical <role_name> for <company_name>, based out of <role_location>. According to my analysis, I think this role should be aligned with your expectations, are you open to a discussion about it? \n\nThere are three main expectations from this role: \n**b**<expectation_first> \n**b**<expectation_second> \n**b**<expectation_third> \n\n<role_extra_info> \n\nThe most important benefits of this role would be threefold: the chance to work with a pretty sharp team, the ability to make a clear impact, and strong growth prospects. \n\nMay I call you to provide the information that will help you make your decision? \n\nThanks for your time. \n\n<your_name> ",
-                    "personalized_email_subject": "<role_name> role that would move your career graph up"
+                    "personalized_email": "Hi <candidate_name>, \n\nMy name is <your_name>, I have been assigned the task to look out for a savvy, analytical <role_name> for <company_name>, based out of <role_location>. From my analysis, I believe that this role should align with your expectations, are you open to a discussion about the same? \n\nThe key expectations from this role are: \n**b**<expectation_first> \n**b**<expectation_second> \n**b**<expectation_third> \n\n<role_extra_info> \n\nThe most important benefits of this role would be threefold: the chance to work with a pretty sharp team, the ability to make a clear impact, and strong growth prospects. \n\nCould I give you a call to provide the necessary information that you will need to make your decision? \n\nI appreciate your time. \n\n<your_name> ",
+                    "personalized_email_subject": "<role_name> role that would enhance your career"
                 }
             },
             "sales": {
@@ -179,9 +179,9 @@
                 "conversation_starters": [],
                 "communication_advice": {
                     "adjectives": [
-                        "ROI Driven",
-                        "Precise But Practical",
-                        "Fast But Analytical"
+                        "Fast But Analytical",
+                        "Thorough Evaluator",
+                        "ROI Driven"
                     ],
                     "key_traits": {
                         "Risk Appetite": "They have high risk tolerance and can even take risky decisions easily if their analysis supports it.",
@@ -190,19 +190,19 @@
                         "Decision Drivers": "Clear proof of ROI and potential impact are the factors that sway their decision."
                     },
                     "description": [
-                        "They are not relationship-oriented and make decisions based solely on product value prop.",
                         "Once they overcome their initial reluctance, they can be fairly fast adopters.",
-                        "They prefer to make decisions themselves, after they have done thorough analysis."
+                        "They prefer to make decisions themselves, after they have done thorough analysis.",
+                        "They respond better to clear and objective but respectful interactions."
                     ],
                     "what_to_say": [
-                        "Use phrases like ‘you will ensure’, ‘the impact of this’, ‘X% more’ etc.",
-                        "Communicate confidently, strongly, positively but avoid a confrontational approach",
-                        "Stay firm while negotiating, they can make unreasonable demands sometimes"
+                        "Help them weigh the risks by sharing objective proof points",
+                        "Stay objective and adopt a professional, business-like approach",
+                        "Help them see both - the ‘big picture’ impact and the ROI of the investment"
                     ],
                     "what_to_avoid": [
-                        "Don’t be slow in responding to their emails, requests, questions",
+                        "Don’t focus on relationship, focus purely on the merit of your product",
                         "Don’t nudge them to do something by using the logic that others have done the same",
-                        "Avoid inviting them for any social interactions until you have their respect"
+                        "Don’t be slow in responding to their emails, requests, questions"
                     ],
                     "_type": [
                         "high calculativeness",
@@ -215,19 +215,19 @@
         "personality_analysis": {
             "ocean_assessment": {
                 "openness": {
-                    "score": 9.8,
+                    "score": 9.88,
                     "level": "Very Open"
                 },
                 "conscientiousness": {
-                    "score": 9.8,
+                    "score": 9.67,
                     "level": "Very Conscientious"
                 },
                 "extraversion": {
-                    "score": 3.18,
+                    "score": 3.25,
                     "level": "Introverted"
                 },
                 "agreeableness": {
-                    "score": 3.34,
+                    "score": 3.1,
                     "level": "Disagreeable"
                 },
                 "emotional_stability": {
@@ -237,19 +237,19 @@
             },
             "disc_assessment": {
                 "dominance": {
-                    "score": 8.9,
+                    "score": 9,
                     "level": "very high"
                 },
                 "influence": {
-                    "score": 6.2,
+                    "score": 5.8,
                     "level": "medium"
                 },
                 "steadiness": {
-                    "score": 6.6,
+                    "score": 6.5,
                     "level": "high"
                 },
                 "calculativeness": {
-                    "score": 9.3,
+                    "score": 9.2,
                     "level": "very high"
                 }
             },
@@ -298,9 +298,9 @@
     },
     "usage_stats": {
         "user_profile": {
-            "remaining": 49,
+            "remaining": 48,
             "limit": 50,
-            "consumed": 1,
+            "consumed": 2,
             "info": "remaining = limit - consumed",
             "remaining_extension": 50,
             "limit_extension": 50,
